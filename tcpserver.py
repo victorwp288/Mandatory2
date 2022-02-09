@@ -2,14 +2,14 @@
 
 from socket import *
 
-def send_back(data):
-    f = open(data+".html", "r")
+def send_back():
+    f = open("index.html", "r")
     html = f.read()
     return html
 
 server_port = 80
 server_socket = socket(AF_INET,SOCK_STREAM)
-server_socket.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
+#server_socket.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
 server_socket.bind(('',server_port))
 server_socket.listen(1)
 print("The server is ready to receive")
